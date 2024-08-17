@@ -1,0 +1,148 @@
+change profile ip to match server ip
+
+----
+
+take out slash / in /secret
+
+----
+
+had to run build 2x
+
+result
+
+==> Wait completed after 8 minutes 15 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> parallels-iso.vault-client: 'parallels' provider box: ../build/vault-client-20240817055759.box
+
+Dump w command
+
+packer build .
+parallels-iso.vault-client: output will be in this color.
+
+==> parallels-iso.vault-client: Retrieving ISO
+==> parallels-iso.vault-client: Trying https://cdimage.ubuntu.com/releases/22.04.4/release/ubuntu-22.04.4-live-server-arm64.iso
+==> parallels-iso.vault-client: Trying https://cdimage.ubuntu.com/releases/22.04.4/release/ubuntu-22.04.4-live-server-arm64.iso?checksum=sha256%3A74b8a9f71288ae0ac79075c2793a0284ef9b9729a3dcf41b693d95d724622b65
+==> parallels-iso.vault-client: https://cdimage.ubuntu.com/releases/22.04.4/release/ubuntu-22.04.4-live-server-arm64.iso?checksum=sha256%3A74b8a9f71288ae0ac79075c2793a0284ef9b9729a3dcf41b693d95d724622b65 => /Users/jamespapademas/.cache/packer/a2bcf685fcca57f42a01f519e9e768cc87ac72b2.iso
+==> parallels-iso.vault-client: Starting HTTP server on port 9071
+==> parallels-iso.vault-client: Creating virtual machine...
+==> parallels-iso.vault-client: Applying default settings...
+==> parallels-iso.vault-client: Creating hard drive...
+==> parallels-iso.vault-client: Setting the boot order...
+==> parallels-iso.vault-client: Attaching ISO to the default CD/DVD ROM device...
+==> parallels-iso.vault-client: Executing custom prlctl commands...
+    parallels-iso.vault-client: Executing: prlctl set ubuntu-server-vanilla --bios-type efi-arm64
+==> parallels-iso.vault-client: Starting the virtual machine...
+==> parallels-iso.vault-client: Waiting 5s for boot...
+==> parallels-iso.vault-client: Host IP for the Parallels machine: 10.0.1.9
+==> parallels-iso.vault-client: Typing the boot command...
+==> parallels-iso.vault-client: Waiting for SSH to become available...
+==> parallels-iso.vault-client: Connected to SSH!
+==> parallels-iso.vault-client: Uploading Parallels version info (19.4.1)
+==> parallels-iso.vault-client: Uploading Parallels Tools for 'lin' to path: 'prl-tools-lin.iso'
+==> parallels-iso.vault-client: Provisioning with shell script: ../scripts/post_install_ubuntu_2204_vagrant.sh
+==> parallels-iso.vault-client:
+==> parallels-iso.vault-client: ##################################################
+==> parallels-iso.vault-client: # Add User customizations below here
+==> parallels-iso.vault-client: ##################################################
+==> parallels-iso.vault-client: sudo apt update
+==> parallels-iso.vault-client:
+==> parallels-iso.vault-client: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> parallels-iso.vault-client:
+    parallels-iso.vault-client: Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
+    parallels-iso.vault-client: Hit:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease
+    parallels-iso.vault-client: Hit:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease
+    parallels-iso.vault-client: Hit:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease
+    parallels-iso.vault-client: Reading package lists...
+    parallels-iso.vault-client: Building dependency tree...
+    parallels-iso.vault-client: Reading state information...
+    parallels-iso.vault-client: 29 packages can be upgraded. Run 'apt list --upgradable' to see them.
+==> parallels-iso.vault-client: sudo apt install -y links rsync
+==> parallels-iso.vault-client:
+==> parallels-iso.vault-client: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+==> parallels-iso.vault-client:
+    parallels-iso.vault-client: Reading package lists...
+    parallels-iso.vault-client: Building dependency tree...
+    parallels-iso.vault-client: Reading state information...
+    parallels-iso.vault-client: rsync is already the newest version (3.2.7-0ubuntu0.22.04.2).
+    parallels-iso.vault-client: rsync set to manually installed.
+    parallels-iso.vault-client: Suggested packages:
+    parallels-iso.vault-client:   mc
+    parallels-iso.vault-client: The following NEW packages will be installed:
+    parallels-iso.vault-client:   liblz1 links
+    parallels-iso.vault-client: 0 upgraded, 2 newly installed, 0 to remove and 29 not upgraded.
+    parallels-iso.vault-client: Need to get 763 kB of archives.
+    parallels-iso.vault-client: After this operation, 2507 kB of additional disk space will be used.
+    parallels-iso.vault-client: Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 liblz1 arm64 1.13-1 [37.9 kB]
+    parallels-iso.vault-client: Get:2 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 links arm64 2.25-1build1 [725 kB]
+==> parallels-iso.vault-client: debconf: unable to initialize frontend: Dialog
+==> parallels-iso.vault-client: debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+==> parallels-iso.vault-client: debconf: falling back to frontend: Readline
+==> parallels-iso.vault-client: debconf: unable to initialize frontend: Readline
+==> parallels-iso.vault-client: debconf: (This frontend requires a controlling tty.)
+==> parallels-iso.vault-client: debconf: falling back to frontend: Teletype
+==> parallels-iso.vault-client: dpkg-preconfigure: unable to re-open stdin:
+    parallels-iso.vault-client: Fetched 763 kB in 1s (675 kB/s)
+    parallels-iso.vault-client: Selecting previously unselected package liblz1:arm64.
+    parallels-iso.vault-client: (Reading database ... 82971 files and directories currently installed.)
+    parallels-iso.vault-client: Preparing to unpack .../liblz1_1.13-1_arm64.deb ...
+    parallels-iso.vault-client: Unpacking liblz1:arm64 (1.13-1) ...
+    parallels-iso.vault-client: Selecting previously unselected package links.
+    parallels-iso.vault-client: Preparing to unpack .../links_2.25-1build1_arm64.deb ...
+    parallels-iso.vault-client: Unpacking links (2.25-1build1) ...
+    parallels-iso.vault-client: Setting up liblz1:arm64 (1.13-1) ...
+    parallels-iso.vault-client: Setting up links (2.25-1build1) ...
+    parallels-iso.vault-client: Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+    parallels-iso.vault-client: Processing triggers for man-db (2.10.2-1) ...
+    parallels-iso.vault-client:
+    parallels-iso.vault-client: Running kernel seems to be up-to-date.
+    parallels-iso.vault-client:
+    parallels-iso.vault-client: No services need to be restarted.
+    parallels-iso.vault-client:
+    parallels-iso.vault-client: No containers need to be restarted.
+    parallels-iso.vault-client:
+    parallels-iso.vault-client: No user sessions are running outdated binaries.
+    parallels-iso.vault-client:
+    parallels-iso.vault-client: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+==> parallels-iso.vault-client: echo "Created by me!" >> /home/vagrant/success.txt
+==> parallels-iso.vault-client: Provisioning with shell script: /var/folders/my/0vh83pvs76g24ls7_bfk35g00000gn/T/packer-shell1021258341
+    parallels-iso.vault-client: controller
+==> parallels-iso.vault-client: Gracefully halting virtual machine...
+==> parallels-iso.vault-client: Compacting the disk image
+==> parallels-iso.vault-client: Unregistering virtual machine...
+==> parallels-iso.vault-client: Running post-processor:  (type vagrant)
+==> parallels-iso.vault-client (vagrant): Creating a dummy Vagrant box to ensure the host system can create one correctly
+==> parallels-iso.vault-client (vagrant): Creating Vagrant box for 'parallels' provider
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/NVRAM.dat
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/VmInfo.pvi
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/config.pvs
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/harddisk1.hdd/DiskDescriptor.xml
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/harddisk1.hdd/harddisk1.hdd
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/harddisk1.hdd/harddisk1.hdd.0.{5fbaabe3-6958-40ff-92a7-860e329aab41}.hds
+    parallels-iso.vault-client (vagrant): Copying: /Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/ubuntu_22044_m1_mac-vault-example/output-vault-client/ubuntu-server-vanilla.pvm/harddisk1.hdd/harddisk1.hdd.drh
+    parallels-iso.vault-client (vagrant): Compressing: Vagrantfile
+    parallels-iso.vault-client (vagrant): Compressing: metadata.json
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/NVRAM.dat
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/VmInfo.pvi
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/config.pvs
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/harddisk1.hdd/DiskDescriptor.xml
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/harddisk1.hdd/harddisk1.hdd
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/harddisk1.hdd/harddisk1.hdd.0.{5fbaabe3-6958-40ff-92a7-860e329aab41}.hds
+    parallels-iso.vault-client (vagrant): Compressing: ubuntu-server-vanilla.pvm/harddisk1.hdd/harddisk1.hdd.drh
+Build 'parallels-iso.vault-client' finished after 8 minutes 15 seconds.
+
+==> Wait completed after 8 minutes 15 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> parallels-iso.vault-client: 'parallels' provider box: ../build/vault-client-20240817055759.box
+----
+@
+/Users/jamespapademas/Documents/pragma/it/coursera/FA A 24 ITMO 356-556/Linux-text-book-part-1-2024-04-23.134426/files/Chapter-13/packer-build-templates/build/vault-client-test
+
+for Vagrantfile config correct
+
+config.vm.box = "vault-client-test/"
+
+to no slash
+
+config.vm.box = "vault-client-test"
